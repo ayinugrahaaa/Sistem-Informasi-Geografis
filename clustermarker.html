@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title>Sistem Informasi Geografis Persebaran Pariwisata di Provinsi Lampung</title>
+		<h2><center>Sistem Informasi Geografis Persebaran Pariwisata</center></h2>
+		<h2><center>di Provinsi Lampung</center></h2>
+
+        <style>
+            #map {
+                background-color: gray;
+                width: 100%;
+                height: 480px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="map"></div>
+    </body>
+    <script>
+function initMap() {
+
+  var map = new google.maps.Map(document.getElementById('map'), {zoom: 6,center: {lat: -5.397836, lng: 105.266422}
+  });
+  var infoWin = new google.maps.InfoWindow();
+  // Add some markers to the map.
+  // Note: The code uses the JavaScript Array.prototype.map() method to
+  // create an array of markers based on a given "locations" array.
+  // The map() method here has nothing to do with the Google Maps API.
+  var markers = locations.map(function(location, i) {
+    var marker = new google.maps.Marker({
+      position: location
+    });
+    google.maps.event.addListener(marker, 'click', function(evt) {
+      infoWin.setContent(location.info);
+      infoWin.open(map, marker);
+    })
+    return marker;
+  });
+
+  // Add a marker clusterer to manage the markers.
+  var markerCluster = new MarkerClusterer(map, markers, {
+    imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
+  });
+
+}
+var locations = [
+        {lat: -5.397836, lng: 105.266422, info : '<h3><center>Kota Bandar Lampung</center></h3><hr> <h4>Luas Daerah 169,21 km2, yang terbagi ke dalam 20 Kecamatan dan 126 Kelurahan dengan populasi penduduk 1.166.761 jiwa</h4>'},
+        {lat: -5.415716, lng: 105.230931, info : '<h3><center>Lembah Hijau</center></h3><hr> <h4>Jalan Imba Kesuma Ratu, Bandarlampung</h4>'},
+        {lat: -5.420597, lng: 105.227315, info : '<h3><center>Puncak Mas</center></h3><hr> <h4>Jl. Haji Ramim RJP, Bandar Lampung</h4>'},
+        {lat: -5.770249, lng: 105.109405, info : '<h3><center>Pantai Teluk Kiluan</center></h3><hr> <h4>Kiluan, Tanggamus</h4>'},
+        {lat: -5.192104, lng: 103.930569, info : '<h3><center>Labuhan Jukung Krui </center></h3><hr> <h4>Krui, Lampung Barat</h4>'},
+        {lat: -5.215817, lng: 103.902611, info : '<h3><center>Pantai Walur Krui</center></h3> <h4>Krui, Lampung Barat</h4>'},
+        {lat: -5.822608, lng: 105.276203, info : '<h3><center>Pulau Legundi</center></h3><hr> <h4>Lampung Selatan</h4>"'},
+        {lat: -5.808433, lng: 105.326156, info : '<h3><center>Pulau Siluncal</center></h3><hr> <h4>Lampung Selatan</h4>'},
+        {lat: -5.580092, lng: 105.212739, info : '<h3><center>Pantai Klara</center></h3><hr> <h4>Jl. Raya Way Ratay Pesawaran</h4>'},
+        {lat: -5.630553, lng: 105.214340, info : '<h3><center>Pulau Kelagian Besar</center></h3><hr> <h4>Pesawaran, Lampung Selatan</h4>'},
+        {lat: -5.640909, lng: 105.233991, info : '<h3><center>Pulau Kelagian Kecil</center></h3><hr> <h4>Pesawaran, Lampung Selatan</h4>'},
+        {lat: -5.594522, lng: 105.246086, info : '<h3><center>Pulau Mahitam</center></h3> <hr> <h4>Pesawaran, Lampung Selatan</h4>'},
+        {lat: -5.571501, lng: 105.245292, info : '<h3><center>Pantai Dewi Mandapa</center></h3> <hr> <h4>Sukajaya Darat, Lampung Selatan</h4>'},
+        {lat: -5.563792, lng: 105.275936, info : '<h3><center>Pulau Tegal Mas</center></h3><hr> <h4>Pesawaran, Lampung Selatan</h4>'},
+        {lat: -5.557598, lng: 105.252032, info : '<h3><center>Pantai Sari Ringgung</center></h3> <hr> <h4>Sukajaya Darat, Lampung Selatan</h4>'},
+        {lat: -5.559381, lng: 105.251807, info : '<h3><center>Bukit Krakatau View</center></h3> <hr> <h4>Sukajaya Darat, Lampung Selatan</h4>'},
+        {lat: -5.510729, lng: 105.269102, info : '<h3<center>Pantai Pulau Tangkil</center></h3> <hr><h4>Pesawaran, Lampung Selatan</h4>'},
+        {lat: -5.514424, lng: 105.263308, info : '<h3><center>Pantai Mutun</center></h3> <hr> <h4>Pesawaran, Lampung Selatan</h4>'},
+        {lat: -5.488238, lng: 105.243901, info : '<h3><center>Muncak Tirtayasa</center></h3> <hr> <h4>Sukamaju, Bandarlampung</h4>'},
+        {lat: -5.493087, lng: 105.252216, info : '<h3><center>Pantai Queen Artha</center></h3> <hr> <h4>Sukajaya Darat, Lampung Selatan</h4>'},
+        {lat: -5.485855, lng: 105.249829, info : '<h3><center>Wisata Villa Gardenia</center></h3> <hr> <h4>Sukamaju, Bandarlampung</h4>'},
+        {lat: -5.484210, lng: 105.252753, info : '<h3><center>Pantai Tirtayasa</center></h3> <hr> <h4>Lempasing, Bandarlampung</h4>'},
+        {lat: -5.476866, lng: 105.252560, info : '<h3><center>Pantai Duta Wisata</center></h3><hr> <h4>Lempasing, Bandarlampung</h4>'},
+		{lat: -5.422369, lng: 105.233951, info : '<h3><center>Alam Wawai Ecopark</center></h3><hr> <h4>Jl. Haji Ramim RJP</h4>'},
+		{lat: -5.467633, lng: 104.353596, info : '<h3><center>Taman Nasional Bukit Barisan</center></h3><hr> <h4>Lampung Barat</h4>'},
+		{lat: -5.420963, lng: 105.188647, info : '<h3><center>Taman Kupu-Kupu Gita Persada</center></h3><hr> <h4>Jl. Wan Abdurrahman</h4>'},
+		{lat: -5.436819, lng: 105.222879, info : '<h3><center>Kebun Binatang Bumi Kedaton</center></h3><hr> <h4>Batu Putu, Bandarlampung</h4>'},
+		{lat: -5.435646, lng: 105.229588, info : '<h3><center>Wira Garden</center></h3> <hr> <h4>Batu Putu, Bandarlampung</h4>'},
+		{lat: -5.865558, lng: 105.749820, info : '<h3><center>Menara Siger Lampung</center></h3> <hr> <h4>Bakauheni, Lampung Selatan</h4>'},
+		{lat: -5.674031, lng: 105.533562, info : '<h3><center>Grand Elty Krakatoa</center></h3> <hr> <h4>Kalianda, Lampung Selatan</h4>'},
+		{lat: -5.782575, lng: 105.626257, info : '<h3><center>Gunung Rajabasa</center></h3> <hr> <h4>Kalianda, Lampung Selatan</h4>'},
+		{lat: -4.917118, lng: 105.654143, info : '<h3><center>Taman Nasional Way Kambas</center></h3> <hr> <h4>Way Kanan, Lampung Timur</h4>'},
+		{lat: -4.913854, lng: 103.905034, info : '<h3><center>Danau Ranau</center></h3> <hr> <h4>Lampung Barat</h4>'}];
+
+google.maps.event.addDomListener(window, "load", initMap);
+
+   </script>
+
+<script async defer 
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqIy-vX5tDUpnN5EUuIVG5fNeEuHWm3q4&callback=initMap"></script>
+<script src="src/markerclusterer.js">
+</script>
+	<h5><i>Developed by : </i> Ayi Nugraha | Elshinta Devi Anjani | Siti Nurhaliza Syafri</h5>
+</html>
