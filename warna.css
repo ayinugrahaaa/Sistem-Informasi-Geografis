@@ -1,1 +1,16 @@
+#mapsig {
+                background-color:white;
+                width: 379px;
+                height: 250px;
+            }	
+#shade {
+                background-color:#B0E0E6;
+                width:200px;
+                height: 710px;
+            }
+.mapcanvas{
+				background-color:grey;
+				width:380px;
+				height:251px;
+}
 
