@@ -13,4 +13,18 @@
 				width:380px;
 				height:251px;
 }
-
+#mapdasar {
+                background-color:white;
+                width: 575px;
+                height: 710px;
+            }
+#latitude {
+				display: block;
+				padding: 15px 20px;
+				margin-bottom: 15px;
+				border-radius: 5px;
+				border: 1px solid #EFEFEF;
+				background: #EFEFEF;
+				width: 80%;
+				box-sizing: border-box;
+				}
