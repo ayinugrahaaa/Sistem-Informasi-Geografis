@@ -5,5 +5,22 @@
 	<meta charset="utf-8"> 
 	<meta name="viewport" content="width=device-width"> 
 	<title>Sistem Informasi Geografis</title> 
-    <h2><center>Sistem Informasi Geografis</center></h2> 
-	<script src="http://maps.googleapis.com/maps/api/js"></script> 
+    <h2><center>Sistem Informasi Geografis</center></h2> 	
+	
+<script> 
+var marker; 
+   
+function taruhMarker(peta, posisiTitik){ 
+	if( marker ){ 
+      marker.setPosition(posisiTitik); 
+    } 
+	else { 
+      marker = new google.maps.Marker({ 
+      position: posisiTitik, 
+      map: peta 
+      }); 
+    } 
+    document.getElementById("lat").value = posisiTitik.lat(); 
+    document.getElementById("lng").value = posisiTitik.lng(); 
+	document.getElementById("info").value = posisiTitik.info();   
+} 
