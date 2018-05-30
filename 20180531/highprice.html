@@ -1,0 +1,362 @@
+<html>
+    <head>
+        <title>SIG Persebaran Pariwisata Provinsi Lampung</title>
+        <style>
+            #map {
+                background-color: gray;
+                width: 100%;
+                height: 400px;
+            }
+            .footer {
+                width:auto;
+                height: 5px;
+                background-color:#1b80c4;
+                color:white;
+                padding:20px;
+      }
+      .header { width:auto; 
+    height: 60px;
+  background-color:seagreen;
+     padding:1px;
+}
+
+body {
+    margin: 0 auto;
+    background-color:#1b80c4;
+}
+
+.btn1 {
+    color: black;
+}
+
+.gambar{
+    background-color:#F7F7D2;
+    margin: center ;
+    
+}
+
+.sidebar {
+    float: left;
+    overflow: hidden;
+}
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: grey;
+    text-align: center;
+    padding: 15px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 20px 30px;
+    background-color: inherit;
+    font: inherit;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 100%;
+    left: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content .header {
+    background: red;
+    padding: 20px;
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+    background-color: #ccc;
+    height: 250px;
+}
+
+.column a {
+    float: none;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.column a:hover {
+    background-color: #ddd;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+    .footer {width:auto;
+            height: 10px;
+            background-color:pink;
+            color:grey;
+            padding:20px;
+            }
+    #submit{
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+.footer {
+    width:auto;
+    height: 5px;
+    background-color:#1b80c4;
+    color:white;
+    padding:15px;
+}
+				  form {
+					  width:300px;
+					  margin:50px auto;
+				  }
+				  .search {
+					  padding:8px 15px;
+					  background:rgba(30, 30, 30, 0.2);
+					  border:0px solid #dbdbdb;
+				  }
+				  .button {
+					  position:relative;
+					  padding:6px 15px;
+					  left:-8px;
+					  border:2px solid #53bd84;
+					  background-color:#53bd84;
+					  color:#fafafa;
+				  }
+				  .button:hover  {
+					  background-color:#fafafa;
+					  color:#207cca;
+				  }
+      
+        </style>
+    </head>
+    <center>
+            <center><font size="30" face="Century Gothic">Sistem Informasi Geografis Persebaran Pariwisata</font></center>
+            <center><font size="30" face="Century Gothic">Di Provinsi Lampung</font></center><br><br>
+        </center>
+        <body bgcolor=#008B8B>
+                <div class="header">
+                    <div class="header">
+                        <div class="navbar">
+                            <a href="home.html">BERANDA</a>
+                            <div class="dropdown">
+                                <button class="dropbtn">KAB/KOTA
+                                <i class="fa fa-caret-down"></i>
+                                </button>
+                                <div class="dropdown-content">
+                                    <a href="bandarlampung.html">Kota Bandar Lampung</a>
+                                    <a href="metro.html">Kota Metro</a>
+                                    <a href="lampungbarat.html">Kab. Lampung Barat</a>
+                                    <a href="lampungselatan.html">Kab. Lampung Selatan</a>
+                                    <a href="lampungtimur.html">Kab. Lampung Timur</a>
+                                    <a href="lampungtengah.html">Kab. Lampung Tengah</a>
+                                    <a href="lampungutara.html">Kab. Lampung Utara</a>
+                                    <a href="pesawaran.html">Kab. Pesawaran</a>
+                                    <a href="pringsewu.html">Kab. Pringsewu</a>
+                                    <a href="tanggamus.html">Kab. Tanggamus</a>
+                                    <a href="mesuji.html">Kab. Mesuji</a>
+                                    <a href="pesisirbarat.html">Kab. Pesisir Barat</a>
+                                    <a href="tulangbawang.html">Kab. Tulang Bawang</a>
+                                    <a href="tulangbawangbarat.html">Kab. Tulang Bawang Barat</a>
+                                    <a href="waykanan.html">Kab. Way Kanan</a>
+                                        </div>
+                            </div> 
+                            <div class="dropdown">
+                                <button class="dropbtn">KATEGORI
+                                <i class="fa fa-caret-down"></i>
+                                </button>
+                                <div class="dropdown-content">
+                                    <a href="bahari.html">Wisata Bahari</a>
+                                    <a href="alam.html">Wisata Alam</a>
+                                    <a href="sejarah.html">Wisata Sejarah</a>
+                                        </div>
+                            </div> 
+                            <div class="dropdown">
+                                <button class="dropbtn">TIKET MASUK
+                                <i class="fa fa-caret-down"></i>
+                                </button>
+                                <div class="dropdown-content">
+                                    <a href="lowprice.html">Rp5000 - Rp10000</a>
+                                    <a href="highprice.html">Rp10000 - Rp50000</a>
+                                        </div>
+                            </div>
+                            <a class="active" href="direction.html">PETUNJUK JALAN</a>
+                            <div class="dropdown">
+                                <button class="dropbtn">OVERLAY MAPS
+                                <i class="fa fa-caret-down"></i>
+                                </button>
+                                <div class="dropdown-content">
+                                    <a href="lembahhijau.html">Lembah Hijau</a>
+                                    <a href="puncakmas.html">Puncak Mas</a>
+                                    <a href="muncaktirtayasa.html">Muncak Tirtyasa</a>
+                                    <a href="gardenia.html">Villa Gardenia</a>
+                                    <a href="alamwawai.html">Alam Wawai Ecopark</a>
+                                    <a href="gitapersada.html">Taman Kupu-Kupu Gita Persada</a>
+                                    <a href="bumikedaton.html">Bumi Kedaton</a>
+                                    <a href="wiragarden.html">Wira Garden</a>
+                                    <a href="bukitbarisan.html">Bukit Barisan</a>
+                                    <a href="gunungrajabasa.html">Gunung Rajabasa</a>
+                                    <a href="waykambas.html">Way Kambas</a>
+                                    <a href="palemindah.html">Taman Palem Indah</a>
+                                    <a href="bukitblt.html">Bukit BLT</a>
+                                    <a href="gedungbatin.html">Gedung Batin</a>
+                                    <a href="tirtayasa.html">Pantai Tirtayasa</a>
+                                    <a href="dutawisata.html">Pantai Duta Wisata</a>
+                                    <a href="jukungkrui.html">Labuhan Jukung Krui</a>
+                                    <a href="walurkrui.html">Pantai Walur Krui</a>
+                                    <a href="danauranau.html">Danau Ranau</a>
+                                    <a href="legundi.html">Pulau Legundi</a>
+                                    <a href="siluncal.html">Pulau Siluncal</a>
+
+                            </div>
+                            </div>
+                            </div>
+                <div id="map"></div>
+                <div class="header"> <center><img src= pariwisata.png height= "100" width= "170"></center> </div>
+                <div class="footer">Copyright &copy; 2018. Developed by: AN | EDA | SNS</div>
+        </body>
+        <script src="http://maps.googleapis.com/maps/api/js"></script>  
+    <script>
+
+        function initialize(){
+            var gambar = 'http://maps.google.com/mapfiles/kml/pal2/icon58.png';
+	var mapOptions = {
+		zoom:11,
+        center: new google.maps.LatLng(-5.4284046, 105.2006967),
+        icon:gambar
+        
+	};
+	map = new google.maps.Map(document.getElementById('map'), mapOptions);
+	infoWindow = new google.maps.InfoWindow();
+	var infowindow = new google.maps.InfoWindow();
+	
+	var contentString;
+	infowindow.setContent(contentString);
+  
+	var marker = new google.maps.Marker();
+	marker.addListener('click',function(){
+		infowindow.open(map,marker);
+  ``});
+	marker.setMap(map);
+	
+	var infoWin = new google.maps.InfoWindow();
+    var labels = 'Bandar Lampung';
+        
+    var markers = locations.map(function(location, i) {
+        var marker = new google.maps.Marker({
+            position: location,
+            label: labels[i % labels.length],
+            icon: gambar
+        });
+		google.maps.event.addListener(marker, 'click', function(evt) {
+			infoWin.setContent(location.info);
+			infoWin.open(map, marker);
+		})
+		return marker;
+    }); 
+    
+	console.log(locations);
+    console.log(markers);
+
+    var markerCluster = new MarkerClusterer(map, markers,
+        {imagePath: 'images/m'});
+        
+    var d = markerCluster.distanceBetweenPoints_(markers[2].getPosition(),markers[4].getPosition());
+    console.log(markerCluster.getCalculator());
+
+	google.maps.event.addListener(unila, 'click', showArrays);
+
+    }
+	
+	function showArrays(event) {
+		var vertices = this.getPath();
+		var contentString = '<b>' + this.name + '</b>';
+		infoWindow.setPosition(event.latLng);
+		infoWindow.setContent(contentString);
+		infoWindow.open(map);
+	}
+	google.maps.event.addDomListener(window, 'load', initialize);
+
+     var locations = [
+{lat: -5.484210, lng: 105.252753, info : '<h3><center>Pantai Tirtayasa</center></h3> <hr> <h4>Lempasing, Bandarlampung</h4>',type: 'alam'},
+{lat: -5.476866, lng: 105.252560, info : '<h3><center>Pantai Duta Wisata</center></h3><hr> <h4>Lempasing, Bandarlampung</h4>',type: 'alam'},
+{lat: -5.192104, lng: 103.930569, info : '<h3><center>Labuhan Jukung Krui </center></h3><hr> <h4>Krui, Lampung Barat</h4>',type: 'alam'},
+{lat: -5.215817, lng: 103.902611, info : '<h3><center>Pantai Walur Krui</center></h3> <h4>Krui, Lampung Barat</h4>',type: 'alam'},
+{lat: -4.913854, lng: 103.905034, info : '<h3><center>Danau Ranau</center></h3> <hr> <h4>Lampung Barat</h4>',type: 'alam'},
+{lat: -5.822608, lng: 105.276203, info : '<h3><center>Pulau Legundi</center></h3><hr> <h4>Pulau Legundi adalah desa dan pulau di kecamatan Punduh Pidada, Kabupaten Pesawaran, Lampung, Indonesia. P. Legundi terletak di lepas Selat Legundi</h4>"',type: 'alam'},
+{lat: -5.808433, lng: 105.326156, info : '<h3><center>Pulau Siluncal</center></h3><hr> <h4>Lampung Selatan</h4>',type: 'alam'},
+{lat: -5.559381, lng: 105.251807, info : '<h3><center>Bukit Krakatau View</center></h3> <hr> <h4>Sukajaya Darat, Lampung Selatan</h4>',type: 'alam'},
+{lat: -5.674031, lng: 105.533562, info : '<h3><center>Grand Elty Krakatoa</center></h3> <hr> <h4>Grand Elty Krakatoa terletak di Kawasan Krakatoa Nirwana Resort, Jalan Trans Sumatera Km 45 Merak Belantung, Lampung Selatan, di sini anda bisa menghabiskan liburan anda dengan sederet kegiatan yang menyenangkan </h4>',type: 'alam'},
+{lat: -5.580092, lng: 105.212739, info : '<h3><center>Pantai Klara</center></h3><hr> <h4>Jl. Raya Way Ratay Pesawaran</h4>',type: 'alam'},
+{lat: -5.630553, lng: 105.214340, info : '<h3><center>Pulau Kelagian Besar</center></h3><hr> <h4>Terletak di Jalan Way Ratai,Pesawaran. Berbagai aktivitas bisa dilakukan disini, diantaranya snorkling di depan pantai dan berkano. Disini disewakan sejumlah kano dengan tarif Rp 20 ribu perjamnya. Dengan menggunakan kano anda dapat menyusuri pinggir pantai ini</h4>',type: 'alam'},
+{lat: -5.640909, lng: 105.233991, info : '<h3><center>Pulau Kelagian Kecil</center></h3><hr> <h4>Pesawaran</h4>'},
+{lat: -5.594522, lng: 105.246086, info : '<h3><center>Pulau Mahitam</center></h3> <hr> <h4>Obyek Wisata Pulau Mahitam di Gebang Lampung adalah salah satu tempat wisata yang berada di Gebang, Padang Cermin, Kabupaten Pesawaran, Lampung, Indonesia . Obyek Wisata Pulau Mahitam di Gebang Lampung adalah tempat wisata yang ramai dengan wisatawan pada hari biasa maupun hari liburan. Tempat ini sangat indah dan bisa memberikan sensasi yang berbeda dengan aktivitas kita sehari hari</h4>',type: 'alam'},
+{lat: -5.571501, lng: 105.245292, info : '<h3><center>Pantai Dewi Mandapa</center></h3> <hr> <h4>Lokasi Pantai Dewi Mandapa Lampung ada di Kabupaten Pesawaran, tepatnya di Desa Gebang Kecamatan Teluk Pandan, Kabupaten Pesawaran, Lampung. Pantai Dewi Mandapa sendiri terletak persis di tengah-tengah antara Dermaga Ketapang (penyeberangan ke Pulau Pahawang) dan Pantai Sari Ringgung</h4>',type: 'alam'},
+{lat: -5.563792, lng: 105.275936, info : '<h3><center>Pulau Tegal Mas</center></h3><hr> <h4>Pulau Tegal Mas Lampung merupakan salah satu tempat wisata baru di Kabupaten Pesawaran. Pulau Tegal Mas Lampung mungkin bisa kamu jadikan alternatif wisata bersama keluarga, sahabat, pacar ataupun mantan sekalipun. Terlebih eksotisme Pulau Tegal Mas Lampung masih terjaga dengan baik karena belum begitu banyak wisatawan yang berkunjung ke tempat ini.</h4>',type: 'alam'},
+{lat: -5.510729, lng: 105.269102, info : '<h3<center>Pantai Pulau Tangkil</center></h3> <hr><h4>Pulau Tangkil bisa jadi pilihan untuk berwisata pantai dengan ragam pilihan olahraga air yang menantang. Objek wisata di Teluk Lampung yang dikelola Tangkil Resor tersebut menyediakan arena bertualang bagi keluarga dengan ongkos murah meriah. Salah satunya sensasi parasailing yang satu-satunya di Lampung</h4>',type: 'alam'},
+{lat: -5.514424, lng: 105.263308, info : '<h3><center>Pantai Mutun</center></h3> <hr> <h4>Pantai Mutun adalah sebuah objek wisata yang terletak di kawasan Jalan Raya Bumi Sari Natar Gang Bima Ruko Orange Natar Lampung Selatan. Secara administratif termasuk dalam wilayah kecamatan Jalan Raya Bumi Sari Natar Gang Bima Ruko Orange Padang Cermin, Kabupaten Pesawara</h4>',type: 'alam'},
+{lat: -5.104246, lng: 103.864045, info : '<h3><center>Pantai Tembakak</center></h3><hr> <h4>Pantai Tembakak dikenal sebagai pintu gerbang menuju ke Pulau Pisang</h4>',type: 'alam'},
+{lat: -5.307731, lng: 103.995633, info : '<h3><center>Pantai Ujung Bocur</center></h3><hr> <h4>Ujung Bocur adalah nama beken dari Pantai Karang Nyimbor yang terletak di pekon atau desa Tanjung Setia, kecamatan Pesisir Selatan, kabupaten Pesisir Barat, provinsi Lampung. Pantai ini sangat terkenal dengan ombaknya yang tinggi dan konsisten</h4>',type: 'alam'},
+{lat: -5.193239, lng: 103.928879, info : '<h3><center>Pantai Labuhan Jukung	</center></h3><hr> <h4>Terletak diPekon Kampung Jaya Pesisir Tengah Kabupaten Pesisir Barat. Pantai ini merupakan satu aset milik pemerintah daerah Pesisir Barat dengan Luas kurang lebih 12 Hektare</h4>',type: 'alam'},
+{lat:-5.415716, lng: 105.230931,info : '<h3><center>Lembah Hijau</center></h3><hr> <h4>Jalan Imba Kesuma Ratu, Bandarlampung</h4> <hr> <h4>taman wisata keluarga berorentasi lingkungan, memadukan antara rekreasi, nuansa kesegaran alam nan hijau dan pengetahuan. Berbagai wahana sarana rekreasi keluarga menarik mulai dari Wahana Air, OutBound, Camping Ground, Wahana Permainan, hingga wahana rekreasi bernuansa pengetahuan alam sengaja kami persembahkan untuk memanjakan saat-saat santai bagi masyarakat pengunjung<h4>'},
+{lat:-5.420597,  lng: 105.227315,info : '<h3><center>Puncak Mas</center></h3><hr> <h4>Jl. Haji Ramim RJP, Bandar Lampung</h4> <hr> <h4> Dari kota Bandar Lampung memakan waktu tempuh kurang lebih sekitar 30 menitan. Terdapat fasilitas yaitu cafe outdoor, rumah pohon, jembatan cinta, gazebo , toilet, rumah ibadah, parkir, dan taman. Harga: 20rb/orang </h4>'},
+{lat: -5.422369, lng: 105.233951, info : '<h3><center>Alam Wawai Ecopark</center></h3><hr> <h4>Jl. Haji Ramim RJP. Sukadanaham, tanjung Karang Barat, Bandar lampung</h4>'},
+{lat: -5.436819, lng: 105.222879, info : '<h3><center>Kebun Binatang Bumi Kedaton</center></h3><hr> <h4>Batu Putu, Bandarlampung</h4>'},
+]
+</script>
+<script>
+    function initMap(){
+        var gambar = 'http://maps.google.com/mapfiles/kml/pal2/icon58.png';
+        map = new google.maps.Map(document.getElementById('map'),{
+            zoom: 8,
+            center: center,
+            icon: gambar
+        });
+            infowindow = new google.maps.InfoWindow();
+        }
+    </script>
+<script src="src/markerclusterer.js">
+</script>
+</html>
