@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SIG Persebaran Pariwisata Provinsi Lampung</title>
+    <style>
+        #map {
+            background-color: gray;
+            width: 100%;
+            height: 500px;
+        }
+            /* Optional: Makes the sample page fill the window. */
+            html, body {
+              height: 100%;
+              margin: 0;
+              padding: 0;
+            }
+
+
+        .footer {
+            width:auto;
+            height: 5px;
+            background-color:#1b80c4;
+            color:white;
+            padding:20px;
+  }
+  .header { width:auto; 
+height: 60px;
+background-color:seagreen;
+ padding:1px;
+}
+
+body {
+margin: 0 auto;
+background-color:#1b80c4;
+}
+
+.btn1 {
+color: black;
+}
+
+.gambar{
+background-color:#F7F7D2;
+margin: center ;
+
+}
+
+.sidebar {
+float: left;
+overflow: hidden;
+}
+.navbar {
+overflow: hidden;
+background-color: #333;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+float: left;
+font-size: 16px;
+color: grey;
+text-align: center;
+padding: 15px 16px;
+text-decoration: none;
+}
+
+.dropdown {
+float: left;
+overflow: hidden;
+}
+
+.dropdown .dropbtn {
+font-size: 16px;    
+border: none;
+outline: none;
+color: white;
+padding: 20px 30px;
+background-color: inherit;
+font: inherit;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+background-color: red;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+width: 100%;
+left: 0;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+.dropdown-content .header {
+background: red;
+padding: 20px;
+color: white;
+}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+float: left;
+width: 33.33%;
+padding: 10px;
+background-color: #ccc;
+height: 250px;
+}
+
+.column a {
+float: none;
+color: black;
+padding: 16px;
+text-decoration: none;
+display: block;
+text-align: left;
+}
+
+.column a:hover {
+background-color: #ddd;
+}
+
+/* Clear floats after the columns */
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+
+.footer {width:auto;
+        height: 10px;
+        background-color:pink;
+        color:grey;
+        padding:20px;
+        }
+#submit{
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+.footer {
+width:auto;
+height: 5px;
+background-color:#1b80c4;
+color:white;
+padding:15px;
+}
+      form {
+        width:300px;
+        margin:50px auto;
+      }
+      .search {
+        padding:8px 15px;
+        background:rgba(30, 30, 30, 0.2);
+        border:0px solid #dbdbdb;
+      }
+      .button {
+        position:relative;
+        padding:6px 15px;
+        left:-8px;
+        border:2px solid #53bd84;
+        background-color:#53bd84;
+        color:#fafafa;
+      }
+      .button:hover  {
+        background-color:#fafafa;
+        color:#207cca;
+      }
+  
+    </style>
+</head>
+<center>
+        <center><font size="30" face="Century Gothic">Sistem Informasi Geografis Persebaran Pariwisata</font></center>
+        <center><font size="30" face="Century Gothic">Di Provinsi Lampung</font></center><br><br>
+    </center>
+    <body bgcolor=#008B8B>
+            <div class="header">
+                <div class="header">
+                    <div class="navbar">
+                        <a href="home.html">BERANDA</a>
+                        <div class="dropdown">
+                            <button class="dropbtn">KAB/KOTA
+                            <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="bandarlampung.html">Kota Bandar Lampung</a>
+                                <a href="metro.html">Kota Metro</a>
+                                <a href="lampungbarat.html">Kab. Lampung Barat</a>
+                                <a href="lampungselatan.html">Kab. Lampung Selatan</a>
+                                <a href="lampungtimur.html">Kab. Lampung Timur</a>
+                                <a href="lampungtengah.html">Kab. Lampung Tengah</a>
+                                <a href="lampungutara.html">Kab. Lampung Utara</a>
+                                <a href="pesawaran.html">Kab. Pesawaran</a>
+                                <a href="pringsewu.html">Kab. Pringsewu</a>
+                                <a href="tanggamus.html">Kab. Tanggamus</a>
+                                <a href="mesuji.html">Kab. Mesuji</a>
+                                <a href="pesisirbarat.html">Kab. Pesisir Barat</a>
+                                <a href="tulangbawang.html">Kab. Tulang Bawang</a>
+                                <a href="tulangbawangbarat.html">Kab. Tulang Bawang Barat</a>
+                                <a href="waykanan.html">Kab. Way Kanan</a>
+                                    </div>
+                        </div> 
+                        <div class="dropdown">
+                            <button class="dropbtn">KATEGORI
+                            <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="bahari.html">Wisata Bahari</a>
+                                <a href="alam.html">Wisata Alam</a>
+                                <a href="sejarah.html">Wisata Sejarah</a>
+                                    </div>
+                        </div> 
+                        <div class="dropdown">
+                            <button class="dropbtn">TIKET MASUK
+                            <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="lowprice.html">Rp5000 - Rp10000</a>
+                                <a href="highprice.html">Rp10000 - Rp50000</a>
+                                    </div>
+                        </div>
+                        <a class="active" href="direction.html">PETUNJUK JALAN</a>
+                        <div class="dropdown">
+                            <button class="dropbtn">OVERLAY MAPS
+                            <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="lembahhijau.html">Lembah Hijau</a>
+                                <a href="puncakmas.html">Puncak Mas</a>
+                                <a href="muncaktirtayasa.html">Muncak Tirtyasa</a>
+                                <a href="gardenia.html">Villa Gardenia</a>
+                                <a href="alamwawai.html">Alam Wawai Ecopark</a>
+                                <a href="gitapersada.html">Taman Kupu-Kupu Gita Persada</a>
+                                <a href="bumikedaton.html">Bumi Kedaton</a>
+                                <a href="wiragarden.html">Wira Garden</a>
+                                <a href="bukitbarisan.html">Bukit Barisan</a>
+                                <a href="gunungrajabasa.html">Gunung Rajabasa</a>
+                                <a href="waykambas.html">Way Kambas</a>
+                                <a href="palemindah.html">Taman Palem Indah</a>
+                                <a href="bukitblt.html">Bukit BLT</a>
+                                <a href="gedungbatin.html">Gedung Batin</a>
+                                <a href="tirtayasa.html">Pantai Tirtayasa</a>
+                                <a href="dutawisata.html">Pantai Duta Wisata</a>
+                                <a href="jukungkrui.html">Labuhan Jukung Krui</a>
+                                <a href="walurkrui.html">Pantai Walur Krui</a>
+                                <a href="danauranau.html">Danau Ranau</a>
+                                <a href="legundi.html">Pulau Legundi</a>
+                                <a href="siluncal.html">Pulau Siluncal</a>
+
+                        </div>
+                        </div>
+                        </div>
+
+    </body>
+
+    <body>
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBs7q7TznMg3Ai1LjVMjIpmsoJRwU_zSIY"></script>
+          <script>
+            // This example creates a custom overlay called USGSOverlay, containing
+            // a U.S. Geological Survey (USGS) image of the relevant area on the map.
+      
+            // Set the custom overlay object's prototype to a new instance
+            // of OverlayView. In effect, this will subclass the overlay class therefore
+            // it's simpler to load the API synchronously, using
+            // google.maps.event.addDomListener().
+            // Note that we set the prototype to an instance, rather than the
+            // parent class itself, because we do not wish to modify the parent class.
+      
+            var overlay;
+            USGSOverlay.prototype = new google.maps.OverlayView();
+      
+            // Initialize the map and the custom overlay.
+      
+            function initMap() {
+              var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 13,
+                center: {lat:-5.2188068,lng:103.8934593},
+                mapTypeId: 'roadmap'
+              });
+      
+              var bounds = new google.maps.LatLngBounds(
+                  new google.maps.LatLng(-5.228465,103.8977933),
+                  new google.maps.LatLng(-5.211199,103.9177063));
+      
+              var srcImage = 'overlay/walurkrui.jpg';
+              overlay = new USGSOverlay(bounds, srcImage, map);
+            }
+      
+            function USGSOverlay(bounds, image, map) {
+      
+              this.bounds_ = bounds;
+              this.image_ = image;
+              this.map_ = map;
+              this.div_ = null;
+              this.setMap(map);
+            }
+            USGSOverlay.prototype.onAdd = function() {
+      
+              var div = document.createElement('div');
+              div.style.borderStyle = 'none';
+              div.style.borderWidth = '0px';
+              div.style.position = 'absolute';
+      
+              var img = document.createElement('img');
+              img.src = this.image_;
+              img.style.width = '100%';
+              img.style.height = '100%';
+              img.style.position = 'absolute';
+              div.appendChild(img);
+      
+              this.div_ = div;
+      
+              // Add the element to the "overlayLayer" pane.
+              var panes = this.getPanes();
+              panes.overlayLayer.appendChild(div);
+            };
+      
+            USGSOverlay.prototype.draw = function() {
+              var overlayProjection = this.getProjection();
+              var sw = overlayProjection.fromLatLngToDivPixel(this.bounds_.getSouthWest());
+              var ne = overlayProjection.fromLatLngToDivPixel(this.bounds_.getNorthEast());
+      
+              var div = this.div_;
+              div.style.left = sw.x + 'px';
+              div.style.top = ne.y + 'px';
+              div.style.width = (ne.x - sw.x) + 'px';
+              div.style.height = (sw.y - ne.y) + 'px';
+            };
+      
+            USGSOverlay.prototype.onRemove = function() {
+              this.div_.parentNode.removeChild(this.div_);
+              this.div_ = null;
+            };
+      
+            google.maps.event.addDomListener(window, 'load', initMap);
+          </script>
+      <div id="map"></div>
+      <div class="header"> <center><img src= pariwisata.png height= "100" width= "170"></center> </div>
+      <div class="footer">Copyright &copy; 2018. Developed by: AN | EDA | SNS</div>
+    </body>
+</html>
