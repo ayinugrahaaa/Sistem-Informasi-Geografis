@@ -1,0 +1,53 @@
+ ]
+</script>
+
+<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqIy-vX5tDUpnN5EUuIVG5fNeEuHWm3q4&callback= ap"> </script> 
+<script>
+        var map = null;
+        var center = {lat: -5.4284046, lng:105.2006967};
+        var infowindow;
+
+    var config = {
+    apiKey: "AIzaSyBA24EwKfYynStdhClC-HVgjBXHFG8Kwf8",
+    authDomain: "sistem-informasi-1521524387051.firebaseapp.com",
+    databaseURL: "https://sistem-informasi-1521524387051.firebaseio.com",
+    projectId: "sistem-informasi-1521524387051",
+    storageBucket: "sistem-informasi-1521524387051.appspot.com",
+    messagingSenderId: "625680487242"
+  };
+  firebase.initializeApp(config);
+
+        var db = firebase.database();
+        var dataRef = db.ref('bandarlampung')
+
+        dataRef.on('value', showData, showError);
+        function showData(data){
+            //console.log(data.val());
+            map.data.addGeoJson(data.val()); 
+            map.data.setStyle({
+                fillColor :'#ff1e1e',
+                strokeWeight: 0.2
+            });
+            map.data.addListener('click', function(event){
+                infoWindowContent = event.feature.getProperty('DESA')+"<br>"+event.feature.getProperty('KECAMATAN');
+                infowindow.setContent(infoWindowContent);
+                infowindow.setPosition(event.latLng);
+                infowindow.open(map);
+        
+            });
+        }
+        function showError(err){
+            console.log(err);
+        }
+        function initMap(){
+            map = new google.maps.Map(document.getElementById('map'),{
+                zoom: 13,
+                center: center
+            });
+            infowindow = new google.maps.InfoWindow();
+        }
+    </script>
+<script src="src/markerclusterer.js">
+</script>
+</html>
