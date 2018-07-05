@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SIG Pariwisata di Provinsi Lampung<code>setPanel()</code></title>
+    <style>
+        html, body, #map-canvas {
+          height: 100%;
+          margin: 0px;
+          padding: 0px
+        }
+        #panel {
+          position: absolute;
+          top: 5px;
+          left: 50%;
+          margin-left: -180px;
+          z-index: 5;
+          background-color: #fff;
+          padding: 5px;
+          border: 1px solid #999;
+        }
+        .footer {
+        width:auto;
+        height: 5px;
+        background-color:#1b80c4;
+        color:white;
+        padding:20px;
+}
+.header { width:auto; 
+height: 60px;
+background-color:rgb(0, 8, 8);
+padding:1px;
+}
+
+body {
+margin: 0 auto;
+background-color:#1b80c4;
+}
+
+.btn1 {
+color: black;
+}
+
+.gambar{
+background-color:#F7F7D2;
+margin: center ;
+
+}
+
+.sidebar {
+float: left;
+overflow: hidden;
+}
+
+.sidebar a.active {
+color: white;
+float: left;
+font-size: 16px;
+text-align: center;
+padding: 20px 16px;
+text-decoration: none
+}
+
+.s1 {
+float: left;
+overflow: hidden;
+}
+.s2 {
+float: left;
+overflow: hidden;
+}
+.s3 {
+float: left;
+overflow: hidden;
+}
+
+.s1 .btn1 {
+font-size: 16px;    
+border: none;
+outline: none;
+color: white;
+padding: 20px 30px;
+background-color: inherit;
+font: inherit;
+}
+.s2 .btn2 {
+font-size: 16px;    
+border: none;
+outline: none;
+color: white;
+padding: 20px 30px;
+background-color: inherit;
+font: inherit;
+}
+.s3 .btn3 {
+font-size: 16px;    
+border: none;
+outline: none;
+color: white;
+padding: 20px 30px;
+background-color: inherit;
+font: inherit;
+}
+.sidebar a:hover, .s1:hover .btn1 {
+background-color: white;
+color:#555;
+}
+
+.sidebar a:hover, .s2:hover .btn2 {
+background-color: white;
+color:#555;
+}
+
+.sidebar a:hover, .s3:hover .btn3 {
+background-color: white;
+color:#555;
+}
+
+.sidebar3 {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+width: 100%;
+left: 0;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+.sidebar4 {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+width: 100%;
+left: 0;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+.sidebar5 {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+width: 100%;
+left: 0;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+.s1:hover .sidebar3 {
+display: block;
+}
+
+.s2:hover .sidebar4 {
+display: block;
+}
+.s3:hover .sidebar5 {
+display: block;
+}
+
+.sidebar3 a {
+float: none;
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+text-align: left;
+}
+
+.sidebar4 a {
+float: none;
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+text-align: left;
+}
+
+.sidebar5 a {
+float: none;
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+text-align: left;
+}
+
+.footer {
+width:auto;
+height: 5px;
+background-color:rgb(0, 8, 8);
+color:white;
+padding:15px;
+}
+      </style>
+    <style>
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #floating-panel {
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        z-index: 5;
+        background-color: white;
+        padding: 5px;
+        border: 1px solid rgb(0, 8, 8);
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+      #right-panel {
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+
+      #right-panel select, #right-panel input {
+        font-size: 15px;
+      }
+
+      #right-panel select {
+        width: 100%;
+      }
+
+      #right-panel i {
+        font-size: 12px;
+      }
+      #right-panel {
+        height: 100%;
+        float: right;
+        width: 390px;
+        overflow: auto;
+      }
+      #map {
+        margin-right: 400px;
+      }
+      #floating-panel {
+        background: white;
+        padding: 5px;
+        font-size: 14px;
+        font-family: Arial;
+        border: 1px solid rgb(0, 8, 8);
+        box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
+        display: none;
+      }
+      @media print {
+        #map {
+          height: 500px;
+          margin: 0;
+        }
+        #right-panel {
+          float: none;
+          width: auto;
+        }
+      }
+      #floating-panell {
+        position:left;
+        top: 10px;
+        left: 25%;
+        z-index: 5;
+        background-color: rgb(0, 8, 8);
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Century Gothic','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+      .footer {
+                width:auto;
+                height: 10px;
+                background-color:rgb(0, 8, 8);
+                color:white;
+                padding:20px;
+      }
+    </style>
+  </head>
+  <center>
+      <center><font size="30" face="Century Gothic">Sistem Informasi Geografis Persebaran Pariwisata</font></center>
+      <center><font size="30" face="Century Gothic">Di Provinsi Lampung</font></center><br><br>
+  </center>
+  <body bgcolor=#008B8B>
+  <div class="header">
+      <div class="header">
+          <div class= "sidebar">
+          <a class="active" href="home.html">BERANDA</a>
+          <div class="s1">
+          <button class="btn1">KAB/KOTA</button>
+          <div class="sidebar3">
+             <a href="bandarlampung.html">Kota Bandar Lampung</a>
+             <a href="metro.html">Kota Metro</a>
+             <a href="lampungbarat.html">Kab. Lampung Barat</a>
+             <a href="lampungselatan.html">Kab. Lampung Selatan</a>
+             <a href="lampungtimur.html">Kab. Lampung Timur</a>
+             <a href="lampungtengah.html">Kab. Lampung Tengah</a>
+             <a href="lampungutara.html">Kab. Lampung Utara</a>
+             <a href="pesawaran.html">Kab. Pesawaran</a>
+             <a href="pringsewu.html">Kab. Pringsewu</a>
+             <a href="tanggamus.html">Kab. Tanggamus</a>
+             <a href="mesuji.html">Kab. Mesuji</a>
+             <a href="pesisirbarat.html">Kab. Pesisir Barat</a>
+             <a href="tulangbawang.html">Kab. Tulang Bawang</a>
+             <a href="tulangbawangbarat.html">Kab. Tulang Bawang Barat</a>
+             <a href="waykanan.html">Kab. Way Kanan</a>
+      </div></div>
+          <div class="s2">
+          <button class="btn2">KATEGORI</button>
+          <div class="sidebar4">
+                  <a href="bahari.html">Wisata Bahari</a>
+                  <a href="alam.html">Wisata Alam</a>
+                  <a href="sejarah.html">Wisata Sejarah</a>
+
+          </div></div>
+          <div class="s3">
+              <button class="btn3">TIKET MASUK</button>
+              <div class="sidebar5">
+              <a href="lowprice.html">Rp5000 - Rp10000</a>
+              <a href="highprice.html">Rp10000 - Rp50000</a>
+              </div></div>
+              <a class="active" href="direction.html">PETUNJUK JALAN</a>
+              <div class="s3">
+                <button class="btn3">OVERLAY MAPS</button>
+                <div class="sidebar5">
+                    <a href="lembahhijau.html">Lembah Hijau</a>
+                    <a href="puncakmas.html">Puncak Mas</a>
+                    <a href="muncaktirtayasa.html">Muncak Tirtyasa</a>
+                    <a href="gardenia.html">Villa Gardenia</a>
+                    <a href="alamwawai.html">Alam Wawai Ecopark</a>
+                    <a href="gitapersada.html">Taman Kupu-Kupu Gita Persada</a>
+                    <a href="bumikedaton.html">Bumi Kedaton</a>
+                    <a href="wiragarden.html">Wira Garden</a>
+                    <a href="bukitbarisan.html">Bukit Barisan</a>
+                    <a href="gunungrajabasa.html">Gunung Rajabasa</a>
+                    <a href="waykambas.html">Way Kambas</a>
+                    <a href="palemindah.html">Taman Palem Indah</a>
+                    <a href="bukitblt.html">Bukit BLT</a>
+                    <a href="gedungbatin.html">Gedung Batin</a>
+                    <a href="tirtayasa.html">Pantai Tirtayasa</a>
+                    <a href="dutawisata.html">Pantai Duta Wisata</a>
+                    <a href="jukungkrui.html">Labuhan Jukung Krui</a>
+                    <a href="walurkrui.html">Pantai Walur Krui</a>
+                    <a href="danauranau.html">Danau Ranau</a>
+                    <a href="legundi.html">Pulau Legundi</a>
+                    <a href="siluncal.html">Pulau Siluncal</a>
+                    <a href="curugtujuh.html">Air Terjun Curug Tujuh</a>
+                                <a href="bekri.html">Danau Bekri</a>
+                                <a href="telagaputri.html">Kolam Renang Telaga Putri</a>
+                                <a href="ciupang.html">Air Terjun Ciupang</a>
+                                <a href="tegalmas.html">Pulau Tegal Mas</a>
+                                <a href="kelagianbesar.html">Pulau Kelagian Besar</a>
+                                <a href="kelagiankecil.html">Pulau Kelagian Kecil</a>
+                                <a href="mutun.html">Pantai Mutun</a>
+                                <a href="tangkil.html">Pulau Tangkil</a>
+                                <a href="dewimandapa.html">Pantai Dewi Mandapa</a>
+                                <a href="mahitam.html">Pulau Mahitam</a>
+                                <a href="pisang.html">Pulau Pisang</a>
+                                <a href="klara.html">Pantai Klara</a>
+                  </div>
+            </div>
+            </div>
+            <a class="active" href="cariwisata.html">CARI WISATA</a>
+           </div></div>
+           </div></div>
+  <body>
+    <div id="floating-panel">
+      <strong>ASAL :</strong>
+      <select id="start">
+          <option value="lembahhijau">Lembah Hijau</option>
+          <option value="puncakmas">Puncak Mas</option>
+          <option value="muncaktirtayasa">Muncak Tirtayasa</option>
+          <option value="villagardenia">Villa Gardenia</option>
+          <option value="alamwawai">Alam Wawai</option>
+          <option value="labuhanjukung">Labuhan Jukung</option>
+          <option value="pantaiwalur">Pantai Walur</option>      
+          <option value="tamannasiaonalbukitbarisan">Taman Nasional Bukit Barisan</option>
+          <option value="danauranau">Danau Ranau</option>
+          <option value="bendunganwaytebabeng">Bendungan Way Tebabeng</option>
+          <option value="tugupayanmas">Tugu Payan Mas</option>
+          <option value="bendunganwayrarem">Bendungan Way Rarem</option>
+          <option value="tamankehati">Taman Kehati</option>
+          <option value="tugumacan">Tugu Macan</option>
+          <option value="alunalunsimpangpematang">Alun Alun Simpang Pematang</option>
+          <option value="masjidagungsimpangmesuji">Masjid Agung Simpang Mesuji</option>
+          <option value="bukitblt">Bukit BLT</option>
+          <option value="tuguselamatdatang">Tugu Selmat Datang</option>
+          <option value="danautelagagupit">Danau Telaga Gupit</option>
+          <option value="talangindahpajarresuk">Talang Indah Pajar Resuk</option>
+          <option value="airterjunwaylalaan">Air Terjun Way Lalaan</option>
+          <option value="airterjunlembahpelangi">Air Terjun Lembah Pelangi</option>
+          <option value="sesatagungmenggala">Sesat Agung Menggala</option>
+          <option value="airterjunputrimalu">Air Terjun Putri Malu</option>
+          <option value="kampungwisatagedungbatin">Kampung Wisata Gedung Batin</option>
+          <option value="kolampancingbangharis">Kolam Pancing Bang Haris</option>
+          <option value="tamanpalemindah">Taman Palem Indah</option>
+          <option value="pantaidutawisata">Pantai Duta Wisata</option>
+          <option value="pantaitirtayasa">Pantai Tirtayasa</option>
+          <option value="kebunbinatangbumikedaton">Kebun Binatang Bumi Kedaton</option>
+          <option value="tamankupukupugitapersada">Taman Kupu-Kupu Gita Persada</option>
+          <option value="bukitkrakatauview">Bukit Krakatau View</option>
+          <option value="grandeltykrakatoa">Grand Elty Krakatoa</option>
+          <option value="menarasiger">Menara Siger</option>
+          <option value="pulaulegudi">Pulau Legudi</option>
+          <option value="pulausiluncal">Pulau Siluncal</option>
+          <option value="waykambas">Way Kambas</option>
+          <option value="airterjuncurugtujuh">Air Terjun Curug Tujuh</option>
+          <option value="danaubekri">Danau Bekri</option>
+          <option value="kolamrenangtelagaputri">Kolam Renang Telaga Putri</option>
+          <option value="airterjunciupang">Air Terjun Ciupang</option>
+          <option value="pulautegalmas">pulautegalmasi</option>
+          <option value="pulaukelagianbesar">Pulau Kelagian Besar</option>
+          <option value="pulaukelagiankecil">Pulau Kelagian Kecil</option>
+          <option value="pulaumutun">Pantai Mutun</option>
+          <option value="pulautangkil">Pulau Tangkil</option>
+          <option value="pantaidewimandapa">Pantai Dewi Mandapa</option>
+          <option value="pulaumahitam">Pulau Mahitam</option>
+          <option value="pantaiujungbocur">Pantai Ujung Bocur</option>
+          <option value="pantaitembakak">Pantai Klara</option>
+          <option value="pulaupisang">Pulau Pisang</option>
+      </select>
+      <br>
+      <strong>TUJUAN:</strong>
+      <select id="end">
+          <option value="lembahhijau">Lembah Hijau</option>
+          <option value="puncakmas">Puncak Mas</option>
+          <option value="muncaktirtayasa">Muncak Tirtayasa</option>
+          <option value="villagardenia">Villa Gardenia</option>
+          <option value="alamwawai">Alam Wawai</option>
+          <option value="labuhanjukung">Labuhan Jukung</option>
+          <option value="pantaiwalur">Pantai Walur</option>      
+          <option value="tamannasiaonalbukitbarisan">Taman Nasional Bukit Barisan</option>
+          <option value="danauranau">Danau Ranau</option>
+          <option value="bendunganwaytebabeng">Bendungan Way Tebabeng</option>
+          <option value="tugupayanmas">Tugu Payan Mas</option>
+          <option value="bendunganwayrarem">Bendungan Way Rarem</option>
+          <option value="tamankehati">Taman Kehati</option>
+          <option value="tugumacan">Tugu Macan</option>
+          <option value="alunalunsimpangpematang">Alun Alun Simpang Pematang</option>
+          <option value="masjidagungsimpangmesuji">Masjid Agung Simpang Mesuji</option>
+          <option value="bukitblt">Bukit BLT</option>
+          <option value="tuguselamatdatang">Tugu Selmat Datang</option>
+          <option value="danautelagagupit">Danau Telaga Gupit</option>
+          <option value="talangindahpajarresuk">Talang Indah Pajar Resuk</option>
+          <option value="airterjunwaylalaan">Air Terjun Way Lalaan</option>
+          <option value="airterjunlembahpelangi">Air Terjun Lembah Pelangi</option>
+          <option value="sesatagungmenggala">Sesat Agung Menggala</option>
+          <option value="airterjunputrimalu">Air Terjun Putri Malu</option>
+          <option value="kampungwisatagedungbatin">Kampung Wisata Gedung Batin</option>
+          <option value="kolampancingbangharis">Kolam Pancing Bang Haris</option>
+          <option value="tamanpalemindah">Taman Palem Indah</option>
+          <option value="pantaidutawisata">Pantai Duta Wisata</option>
+          <option value="pantaitirtayasa">Pantai Tirtayasa</option>
+          <option value="kebunbinatangbumikedaton">Kebun Binatang Bumi Kedaton</option>
+          <option value="tamankupukupugitapersada">Taman Kupu-Kupu Gita Persada</option>
+          <option value="bukitkrakatauview">Bukit Krakatau View</option>
+          <option value="grandeltykrakatoa">Grand Elty Krakatoa</option>
+          <option value="menarasiger">Menara Siger</option>
+          <option value="pulaulegudi">Pulau Legudi</option>
+          <option value="pulausiluncal">Pulau Siluncal</option>
+          <option value="waykambas">Way Kambas</option>
+          <option value="airterjuncurugtujuh">Air Terjun Curug Tujuh</option>
+          <option value="danaubekri">Danau Bekri</option>
+          <option value="kolamrenangtelagaputri">Kolam Renang Telaga Putri</option>
+          <option value="airterjunciupang">Air Terjun Ciupang</option>
+          <option value="pulautegalmas">pulautegalmasi</option>
+          <option value="pulaukelagianbesar">Pulau Kelagian Besar</option>
+          <option value="pulaukelagiankecil">Pulau Kelagian Kecil</option>
+          <option value="pulaumutun">Pantai Mutun</option>
+          <option value="pulautangkil">Pulau Tangkil</option>
+          <option value="pantaidewimandapa">Pantai Dewi Mandapa</option>
+          <option value="pulaumahitam">Pulau Mahitam</option>
+          <option value="pantaiujungbocur">Pantai Ujung Bocur</option>
+          <option value="pantaitembakak">Pantai Klara</option>
+          <option value="pulaupisang">Pulau Pisang</option>
+        </select>
+    </div>
+    <div id="floating-panell">
+            <b><font  color= "white">Menggunakan</b></font>
+            <select id="mode">
+              <option value="DRIVING">Mobil</option>
+              <option value="WALKING">Jalan</option>
+            </select>
+            </div>
+    <div id="right-panel"></div>
+    <div id="map"></div>
+    <div class="header"> <center><img src= pariwisata.png height= "100" width= "170"></center> </div>
+    <div class="footer"> <center>Copyright &copy; 2018. Developed by: AN | SNS | EDA</center></div>
+    <script>
+      function initMap() {
+        var directionsDisplay = new google.maps.DirectionsRenderer;
+        var directionsService = new google.maps.DirectionsService;
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 7,
+          center: {lat:-5.375130, lng:105.253640}
+        });
+        directionsDisplay.setMap(map);
+        directionsDisplay.setPanel(document.getElementById('right-panel'));
+
+        
+
+        var control = document.getElementById('floating-panel');
+        control.style.display = 'block';
+        map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
+
+        var onChangeHandler = function() {
+          calculateAndDisplayRoute(directionsService, directionsDisplay);
+        };
+        calculateAndDisplayRoute(directionsService, directionsDisplay);
+        document.getElementById('mode').addEventListener('change', function() {
+          calculateAndDisplayRoute(directionsService, directionsDisplay);
+        });
+        document.getElementById('start').addEventListener('change', onChangeHandler);
+        document.getElementById('end').addEventListener('change', onChangeHandler);
+      }
+
+      function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+        var start = document.getElementById('start').value;
+        var end = document.getElementById('end').value;
+        var selectedMode = document.getElementById('mode').value;
+        directionsService.route({
+          origin: start,
+          destination: end,
+          travelMode: google.maps.TravelMode[selectedMode]
+        }, function(response, status) {
+          if (status === 'OK') {
+            directionsDisplay.setDirections(response);
+          } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+      }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAICvEJEVcEqp6JxtFoP8YsvaCZ5lRjl-s&callback=initMap&language=in&region=ID"></script>
+  </body>
+</html>
